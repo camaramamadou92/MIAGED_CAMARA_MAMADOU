@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:vinted/PageConnexion/creer_compte.dart';
+import 'package:vinted/vue/vuesud.dart';
 
 // définition de classe
 //cette classe définit un widget d’interface utilisateur
@@ -30,7 +31,11 @@ class _MiagedConnectState extends State<MiagedConnect> {
         setState(() {
           errorMessage = '';
         });
-
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const VueSud()),
+              (Route<dynamic> route) => false,
+        );
       } on FirebaseAuthException catch (error) {
         setState(() {
           errorMessage = error.message!;
