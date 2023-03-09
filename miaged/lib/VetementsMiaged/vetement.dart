@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'details.dart';
+
 
 class MiagedVetements extends StatefulWidget {
   const MiagedVetements(   { Key? key ,required this.categorieVetement}) : super(key: key);
@@ -72,7 +74,16 @@ class _MiagedVetementsState extends State<MiagedVetements> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
-
+                                  ElevatedButton(
+                                    child: const Text('Détails'),
+                                    style : buttonStyle,
+                                    onPressed:  () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => Details(id: item.id,titre:item['Titre'],photo:item['Photo'],brand: item['Brand'],taille:item['Taille'],prix:item['Prix'])),
+                                      );
+                                    },
+                                  ),
                                   const SizedBox(width: 8),
                                 ],
                               ),
