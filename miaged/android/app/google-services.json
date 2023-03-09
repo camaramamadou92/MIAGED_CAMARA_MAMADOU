@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "555320912880",
+    "project_id": "m2miage-a23ea",
+    "storage_bucket": "m2miage-a23ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555320912880:android:81fb5b321b1b6b3c9b0b35",
+        "android_client_info": {
+          "package_name": "com.example.vinted"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555320912880-fp9d8ngpf70tbn8pggi9an3t9sfu999f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrN4-pQbEpbPGHg3A5Zw0oR3cKon3xIWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555320912880-fp9d8ngpf70tbn8pggi9an3t9sfu999f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "555320912880-1ck4k507hhm0pon1gbtlfgtr6ie7k3e1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vinted"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
