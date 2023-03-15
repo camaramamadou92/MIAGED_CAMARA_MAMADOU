@@ -30,7 +30,7 @@ class _ProfilState extends State<Profil> {
                     .snapshots(),
                 builder : (context, AsyncSnapshot<QuerySnapshot> snapshot){
                   if (!snapshot.hasData) {
-                    return const Center(child : Text('Loading'));
+                    return const Center(child : Text('Chargement des donnees'));
                   }
                   final _key = GlobalKey<FormState>();
                   final checkerDeLogin = TextEditingController();

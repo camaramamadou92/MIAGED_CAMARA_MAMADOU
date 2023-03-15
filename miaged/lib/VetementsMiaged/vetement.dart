@@ -55,21 +55,21 @@ class _MiagedVetementsState extends State<MiagedVetements> {
                   .snapshots(),
               builder : (context, AsyncSnapshot<QuerySnapshot> snapshot){
                 if (!snapshot.hasData) {
-                  return const Center(child : Text('Loading'));
+                  return const Center(child : Text('Chargement des donnees'));
                 }
                 return ListView(children :
                 // mapping des éléments de la liste Firestore pour les afficher dans un Card
                 snapshot.data!.docs.map((QueryDocumentSnapshot<Object?> item ) {
-                  if(item['Titre'].toString().trim().toLowerCase().contains(checkerRecherche.text.trim().toLowerCase())){
+                  if(item['titre'].toString().trim().toLowerCase().contains(checkerRecherche.text.trim().toLowerCase())){
                     return Center(
                         child: Card(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               ListTile(
-                                leading: Image.network(item['Photo']),
-                                title: Text(item['Titre']),
-                                subtitle: Text('Taille : '+item['Taille'] + '\nPrix : ' + item['Prix'].toString() + ' €'  ),
+                                leading: Image.network(item['photo']),
+                                title: Text(item['titre']),
+                                subtitle: Text('taille : '+item['taille'] + '\nprix : ' + item['prix'].toString() + ' €'  ),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -80,7 +80,7 @@ class _MiagedVetementsState extends State<MiagedVetements> {
                                     onPressed:  () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => Details(id: item.id,titre:item['Titre'],photo:item['Photo'],brand: item['Brand'],taille:item['Taille'],prix:item['Prix'])),
+                                        MaterialPageRoute(builder: (context) => Details(id: item.id,titre:item['titre'],photo:item['photo'],marque: item['marque'],taille:item['taille'],prix:item['prix'])),
                                       );
                                     },
                                   ),

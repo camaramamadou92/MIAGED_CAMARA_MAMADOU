@@ -6,10 +6,10 @@ class Details extends StatefulWidget {
   final String id;
   final String titre;
   final String photo;
-  final String brand;
+  final String marque;
   final String taille;
   final int prix;
-  const Details({Key? key,required this.id, required this.titre, required this.photo, required this.brand, required this.taille, required this.prix}) : super(key: key);
+  const Details({Key? key,required this.id, required this.titre, required this.photo, required this.marque, required this.taille, required this.prix}) : super(key: key);
 
   @override
   _DetailsState createState() => _DetailsState();
@@ -31,7 +31,7 @@ class _DetailsState extends State<Details> {
         home: Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: const Text('Miaged',style: TextStyle(fontFamily: 'bebaskai', fontSize: 30)),
+            title: const Text('Miaged: version light de l’application Vinted',style: TextStyle(fontFamily: 'bebaskai', fontSize: 30)),
           ),
           body:
           Column(
@@ -75,7 +75,7 @@ class _DetailsState extends State<Details> {
                       ),
                       ListTile(
                         title: const Text('Description du produit : '),
-                        subtitle: Text('Marque :  '+ widget.brand +'\nTaille : '+ widget.taille +'. \nPrix : ' + widget.prix.toString() + ' €.' ),
+                        subtitle: Text('marque :  '+ widget.marque +'\ntaille : '+ widget.taille +'. \nprix : ' + widget.prix.toString() + ' €.' ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -88,11 +88,11 @@ class _DetailsState extends State<Details> {
                                   .collection('Panier')
                                   .doc(widget.id)
                                   .set({
-                                'Titre': widget.titre,
-                                'Prix' : widget.prix ,
-                                'Brand' : widget.brand,
-                                'Photo' : widget.photo,
-                                'Taille' : widget.taille
+                                'titre': widget.titre,
+                                'prix' : widget.prix ,
+                                'marque' : widget.marque,
+                                'photo' : widget.photo,
+                                'taille' : widget.taille
                               });
                               showDialog(context: context, builder: (context) {
                                 return AlertDialog(

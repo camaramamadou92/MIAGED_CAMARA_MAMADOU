@@ -33,7 +33,7 @@ class _VueSudState extends State<VueSud> {
         home:  Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: const Text('Miaged',style: TextStyle(fontFamily: 'bebaskai', fontSize: 30)),
+            title: const Text('Miaged: version light de l’application Vinted',style: TextStyle(fontFamily: 'bebaskai', fontSize: 30)),
           ),
           body: Center(
             child: _widgetOptions.elementAt(_selectedIndex),

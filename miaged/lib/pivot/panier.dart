@@ -26,7 +26,7 @@ class _PanierState extends State<Panier> {
                   .snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (!snapshot.hasData) {
-                  return const Center(child: Text('Loading'));
+                  return const Center(child: Text('Chargement de donnees'));
                 }
                 num totalPanier = 0;
                 return Column(
@@ -34,16 +34,16 @@ class _PanierState extends State<Panier> {
                     Expanded(
                       child: ListView(
                         children: snapshot.data!.docs.map((panier) {
-                          totalPanier += panier['Prix'];
+                          totalPanier += panier['prix'];
                           return Center(
                               child: Card(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     ListTile(
-                                      leading: Image.network(panier['Photo']),
-                                      title: Text(panier['Titre']),
-                                      subtitle: Text('Taille : ' + panier['Taille'] +'\nPrix : ' + panier['Prix'].toString() +' €'),
+                                      leading: Image.network(panier['photo']),
+                                      title: Text(panier['titre']),
+                                      subtitle: Text('taille : ' + panier['taille'] +'\nprix : ' + panier['prix'].toString() +' €'),
                                     ),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -52,7 +52,7 @@ class _PanierState extends State<Panier> {
                                           child: const Text('X'),
                                           style: style,
                                           onPressed: () {
-                                            totalPanier -= panier['Prix'];
+                                            totalPanier -= panier['prix'];
                                             FirebaseFirestore.instance
                                                 .collection('Utilisateurs')
                                                 .doc(FirebaseAuth

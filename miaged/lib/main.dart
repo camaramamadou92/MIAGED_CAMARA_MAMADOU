@@ -4,10 +4,12 @@ import 'package:vinted/PageConnexion/se_connecter.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
-runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
 await Firebase. initializeApp(
 options : DefaultFirebaseOptions.currentPlatform,
 );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF7A008A),
       ),
       home: const MiagedConnect(),
+      //home: const MiagedVetements,
     );
   }
 }
