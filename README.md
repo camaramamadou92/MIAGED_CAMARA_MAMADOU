@@ -14,4 +14,4 @@ Au niveau du profil, pour modifier un champ, il suffit de cliquer dans le champ 
 ## authentification firebase
 Lorsqu'on crée un utilisateur les informations sont sauvegardées
 voir par exemple:
-![role](images/auth.png)
+![role](miaged/images/auth.png)
