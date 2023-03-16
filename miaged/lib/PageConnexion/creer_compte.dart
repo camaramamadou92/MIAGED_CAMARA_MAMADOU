@@ -37,7 +37,7 @@ class _CompteState extends State<Compte> {
           'Login': checkerDelogin.text,
           'Password' : checkerMdp.text ,
           'Adresse' : checkerAdresse.text,
-          'Code Postal' : checkerCodePostal.text,
+          'Code postal' : checkerCodePostal.text,
           'Ville' : checkerVille.text,
           'Date de Naissance' : checkerDateNaissance.text,
         });
@@ -185,7 +185,7 @@ class _CompteState extends State<Compte> {
                             validator: critereDateNaissance,
                             decoration:const InputDecoration(
                                 contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                                labelText: 'Date de naissance'
+                                labelText: 'Date de Naissance'
                             )
                         ),
                         const SizedBox(

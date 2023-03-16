@@ -60,10 +60,10 @@ class _VueNordState extends State<VueNord> {
                 children: [
                   MiagedVetements( categorieVetement: null),
                   MiagedVetements( categorieVetement: 'Costumes'),
-                  MiagedVetements( categorieVetement: 'Chemise'),
+                  MiagedVetements( categorieVetement: 'Chemises'),
                   MiagedVetements( categorieVetement: 'Doudoune'),
                   MiagedVetements( categorieVetement: 'Jeans'),
-                  MiagedVetements( categorieVetement: 'Accessoire')
+                  MiagedVetements( categorieVetement: 'Accessoires')
                 ],
               ),
             )

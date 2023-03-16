@@ -69,7 +69,7 @@ class _DetailsState extends State<Details> {
                         ),
                         child: Image.network(
                             widget.photo,
-                            height: 300,
+                            height: 200,
                             fit:BoxFit.fitHeight
                         ),
                       ),

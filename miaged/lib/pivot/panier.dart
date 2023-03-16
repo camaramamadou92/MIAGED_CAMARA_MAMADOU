@@ -49,7 +49,7 @@ class _PanierState extends State<Panier> {
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: <Widget>[
                                         ElevatedButton(
-                                          child: const Text('X'),
+                                          child: const Text('Supprimer'),
                                           style: style,
                                           onPressed: () {
                                             totalPanier -= panier['prix'];
