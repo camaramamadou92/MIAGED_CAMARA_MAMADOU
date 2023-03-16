@@ -9,3 +9,9 @@ Pour vous connecter directement, utilisez:
 Login: mamadou@gmail.com
 
 Password: mamadou2023
+## Modification profil
+Au niveau du profil, pour modifier un champ, il suffit de cliquer dans le champ directement ensuite faire la modification et en fin cliquer sur le bouton Valider
+## authentification firebase
+Lorsqu'on crée un utilisateur les informations sont sauvegardées
+voir par exemple:
+![role](images/auth.png)
