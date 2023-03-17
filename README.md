@@ -17,9 +17,13 @@ Flutter : framework de développement d’applications mobiles.
 Firebase : service de développement d’applications mobiles de Google.
 ## Installation et utilisation
 Cloner le projet depuis GitHub.
+
 Ouvrir le projet avec un éditeur de code compatible avec Flutter.
+
 Installer les packages requis en utilisant la commande .'flutter pub get'
+
 Configurer les informations d’identification Firebase en suivant les instructions fournies dans le fichier .'firebase_options.dart'
+
 Lancer l’application en utilisant la commande ou en utilisant un émulateur de périphérique mobile.'flutter run'
 ## flutter device
 j'ai utilisé chrome (web)
