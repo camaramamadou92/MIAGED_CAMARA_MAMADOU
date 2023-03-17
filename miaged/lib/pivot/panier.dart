@@ -20,47 +20,47 @@ class _PanierState extends State<Panier> {
       Expanded(
           child : StreamBuilder(
               stream: FirebaseFirestore.instance
-                  .collection('Utilisateurs')
+                  .collection('Utilisateurs')// Accède à la collection "Utilisateurs"
                   .doc(FirebaseAuth.instance.currentUser!.uid.toString())
-                  .collection('Panier')
+                  .collection('Panier') // Accède à la sous-collection "Panier"
                   .snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (!snapshot.hasData) {
-                  return const Center(child: Text('Chargement de donnees'));
+                  return const Center(child: Text('Chargement de donnees')); // Affiche un message de chargement si les données ne sont pas encore disponibles
                 }
-                num totalPanier = 0;
+                num totalPanier = 0; // Initialise la somme totale du panier à zéro
                 return Column(
                   children: [
                     Expanded(
                       child: ListView(
-                        children: snapshot.data!.docs.map((panier) {
-                          totalPanier += panier['prix'];
+                        children: snapshot.data!.docs.map((panier) { // Parcourt chaque document de la sous-collection "Panier"
+                          totalPanier += panier['prix']; // Ajoute le prix de l'article au total du panier
                           return Center(
                               child: Card(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     ListTile(
-                                      leading: Image.network(panier['photo']),
-                                      title: Text(panier['titre']),
+                                      leading: Image.network(panier['photo']), // Affiche l'image de l'article
+                                      title: Text(panier['titre']), // Affiche le titre de l'article
                                       subtitle: Text('taille : ' + panier['taille'] +'\nprix : ' + panier['prix'].toString() +' €'),
                                     ),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: <Widget>[
                                         ElevatedButton(
-                                          child: const Text('Supprimer'),
+                                          child: const Text('Supprimer'), // Affiche le bouton "Supprimer"
                                           style: style,
                                           onPressed: () {
-                                            totalPanier -= panier['prix'];
+                                            totalPanier -= panier['prix']; // Soustrait le prix de l'article du total du panier
                                             FirebaseFirestore.instance
-                                                .collection('Utilisateurs')
+                                                .collection('Utilisateurs') // Accède à la collection "Utilisateurs"
                                                 .doc(FirebaseAuth
                                                 .instance.currentUser!.uid
-                                                .toString())
-                                                .collection('Panier')
-                                                .doc(panier.id)
-                                                .delete();
+                                                .toString()) // Accède au document correspondant à l'utilisateur connecté
+                                                .collection('Panier') // Accède à la sous-collection "Panier"
+                                                .doc(panier.id) // Accède au document correspondant à l'article à supprimer
+                                                .delete(); // Supprime l'article du panier
                                           },
                                         )
                                       ],
@@ -75,7 +75,7 @@ class _PanierState extends State<Panier> {
                         }).toList(),
                       ),
                     ),
-                    Text("Somme totale : " + totalPanier.toString()+' €', style:const TextStyle(fontSize: 18)),
+                    Text("Somme totale : " + totalPanier.toString()+' €', style:const TextStyle(fontSize: 18)), // Affiche la somme totale du panier
                     const SizedBox(
                       height: 55.0,
                     )

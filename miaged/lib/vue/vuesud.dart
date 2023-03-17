@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vinted/vue/vuenord.dart';
-import '../pivot/panier.dart';
-import '../pivot/profil.dart';
+import 'package:vinted/vue/vuenord.dart'; // Import de la vue nord
+import '../pivot/panier.dart'; // Import du widget panier
+import '../pivot/profil.dart'; // Import du widget profil
 
 class VueSud extends StatefulWidget {
   const VueSud({Key? key}) : super(key: key);
@@ -9,16 +9,16 @@ class VueSud extends StatefulWidget {
   _VueSudState createState() => _VueSudState();
 }
 class _VueSudState extends State<VueSud> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 0; // Initialisation de l'indice sélectionné pour la navigation
   static  final List<Widget> _widgetOptions = <Widget>[
-    const VueNord(),
-    const Panier(),
-    const Profil()
+    const VueNord(), // Ajout de la vue nord à la liste des options
+    const Panier(), // Ajout du widget panier à la liste des options
+    const Profil() // Ajout du widget profil à la liste des option
   ];
 
-  void _onItemTapped(int index) {
+  void _onItemTapped(int index) { // Méthode appelée lorsque l'on clique sur un élément de la navigation
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = index; // Met à jour l'indice sélectionné
     });
   }
 
@@ -27,7 +27,7 @@ class _VueSudState extends State<VueSud> {
     return MaterialApp(
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            color : Color(0xFF008080),
+            color : Color(0xFF008080), // Thème de la barre d'application
           ),
         ),
         home:  Scaffold(
@@ -36,7 +36,7 @@ class _VueSudState extends State<VueSud> {
             title: const Text('Miaged: version light de l’application Vinted',style: TextStyle(fontFamily: 'bebaskai', fontSize: 30)),
           ),
           body: Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
+            child: _widgetOptions.elementAt(_selectedIndex), // Affiche le widget correspondant à l'indice sélectionné
           ),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
@@ -53,9 +53,9 @@ class _VueSudState extends State<VueSud> {
                 label: 'Profil',
               ),
             ],
-            currentIndex: _selectedIndex,
-            selectedItemColor:const Color(0xFF008080),
-            onTap: _onItemTapped,
+            currentIndex: _selectedIndex, // Indice de l'élément sélectionné dans la navigation
+            selectedItemColor:const Color(0xFF008080), // Couleur de l'élément sélectionné
+            onTap: _onItemTapped, // Appelle la méthode _onItemTapped lorsque l'on clique sur un élément de la navigation
           ),
         ));
   }

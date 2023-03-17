@@ -39,6 +39,7 @@ class _DetailsState extends State<Details> {
                 const SizedBox(
                   height: 40,
                 ),
+                // Bouton de retour
                 Align(
                     alignment: Alignment.topLeft,
                     child: Row(children: [
@@ -62,6 +63,7 @@ class _DetailsState extends State<Details> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+                      // Affichage de l'image du produit
                       ClipRRect(
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(8.0),
@@ -74,15 +76,18 @@ class _DetailsState extends State<Details> {
                         ),
                       ),
                       ListTile(
+                        // Affichage des détails du produit
                         title: const Text('Description du produit : '),
                         subtitle: Text('marque :  '+ widget.marque +'\ntaille : '+ widget.taille +'. \nprix : ' + widget.prix.toString() + ' €.' ),
                       ),
+                      // Bouton pour ajouter le produit au panier
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           ElevatedButton(
                             style: buttonStyle,
                             onPressed: () {
+                              // Ajout du produit dans la collection 'Panier' de l'utilisateur
                               FirebaseFirestore.instance.collection('Utilisateurs')
                                   .doc(FirebaseAuth.instance.currentUser!.uid.toString())
                                   .collection('Panier')

@@ -22,6 +22,7 @@ class _CompteState extends State<Compte> {
   final checkerCodePostal = TextEditingController();
   final checkerVille = TextEditingController();
   final checkerDateNaissance = TextEditingController();
+  //On utilise une GlobalKey pour pouvoir valider le formulaire plus tard
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   String errorMessage = '';
 
@@ -56,6 +57,7 @@ class _CompteState extends State<Compte> {
                   style: ElevatedButton.styleFrom(textStyle: textStyle,primary: const Color(0xFF5C95A1),
                       fixedSize:  const Size(250, 45)),
                   onPressed: () {
+                    //On ferme la boîte de dialogue et on retourne à la page de connexion
                     Navigator.pop(context);
                     Navigator.pop(context);
                   },

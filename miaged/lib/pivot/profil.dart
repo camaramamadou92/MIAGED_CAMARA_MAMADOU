@@ -30,8 +30,10 @@ class _ProfilState extends State<Profil> {
                     .snapshots(),
                 builder : (context, AsyncSnapshot<QuerySnapshot> snapshot){
                   if (!snapshot.hasData) {
+                    //Afficher un message de chargement s'il n'y a pas de données
                     return const Center(child : Text('Chargement des donnees'));
                   }
+                  //Définition des contrôleurs de textes pour les champs de formulaire
                   final _key = GlobalKey<FormState>();
                   final checkerDeLogin = TextEditingController();
                   final checkerMdp = TextEditingController();
@@ -40,6 +42,7 @@ class _ProfilState extends State<Profil> {
                   final checkerVille = TextEditingController();
                   final checkerDateNaissance = TextEditingController();
                   return ListView(children : snapshot.data!.docs.map((profil ) {
+                    // Récupération des valeurs des champs à partir de Firestore et les placer dans les champs de formulaire
                     checkerDeLogin.text = profil['Login'];
                     checkerMdp.text = profil['Password'];
                     checkerAdresse.text = profil['Adresse'];
