@@ -13,5 +13,5 @@ Password: mamadou2023
 Au niveau du profil, pour modifier un champ, il suffit de cliquer dans le champ directement ensuite faire la modification et en fin cliquer sur le bouton Valider
 ## authentification firebase
 Lorsqu'on crée un utilisateur les informations sont sauvegardées
-voir par exemple:
+voir par exemple notre utilisateur ci-dessus apparait:
 ![role](miaged/images/auth.png)
